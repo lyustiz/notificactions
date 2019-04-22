@@ -1,0 +1,60 @@
+.home-container {
+  background: url("~/img/landing/home-smartphone.png") center/cover no-repeat ;
+}
+
+.apps-download {
+  height: 37%;
+}
+
+.apps-download-container {
+  width: 40%;
+}
+
+
+.title-principal {
+  color: $base-color-white;
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+  
+// MEDIA QUERYS
+
+@include media-breakpoint-down(sm) {
+    
+  //ajuste de posicion para dispositivos moviles
+  .apps-download {
+    height: 37%;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .apps-download-container {
+    width: 100%;
+    height: 16%;
+  } 
+
+  .apps-download-text {
+    color: $base-color-blue;
+    font-size: 1rem;
+  }
+
+  .title-principal {
+
+    h1 {
+      font-size:1.3rem;
+      width: 80%;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  
+  .apps-download-text {
+
+    h4{
+      font-size: 1.3rem;
+    }
+  }
+}

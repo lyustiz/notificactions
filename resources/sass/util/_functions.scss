@@ -1,0 +1,21 @@
+// funciones para la animacion de anillo, seccion "que es?"
+
+@function fn-ring-radius($ring-diameter) {
+    @return $ring-diameter / 2;
+}
+
+@function fn-sphere-size($ring-diameter) {
+    @return $ring-diameter * 0.1;
+}
+
+@function fn-ring-center($ring-diameter) {
+    @return $ring-diameter / 2 - ( ($ring-diameter * 0.1) / 2 );
+}
+
+@function fn-phone-size($ring-diameter) {
+    @return $ring-diameter * 1.1;
+}
+
+@function fn-sphere-resize($ring-diameter) {
+    @return ($ring-diameter * 0.1) * 2;  
+}

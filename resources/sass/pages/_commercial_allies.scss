@@ -1,0 +1,82 @@
+// Estilo para el contenedor de la seccion
+.commercial-allies-section {
+  min-height: 92vh;
+  padding-top: 12vh;
+  background: url("~/img/commercial_allies/commercial_allies-bg.png") center/cover no-repeat ;
+  color: $base-color-white;
+}
+
+// modificaciones del estilo base del carousel
+.allies-carousel-control {
+  width: 5% !important;
+}
+
+.allies-carousel-img-container {
+  background-color: rgba(darken($base-color-blue, 25%), 0.3);
+  border-radius: 0.7rem;
+  max-width: 16%;
+}
+
+.allies-carousel-indicator-holder {
+  bottom: auto;
+}
+
+.allies-carousel-indicator {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 50%;
+  background-color: rgba($base-color-white, 0.9) !important;
+}
+
+// contenedor de los botones de filtro de categorias 
+.commerce-category-container {
+  overflow: hidden;
+  height: 1.8rem;
+}
+
+
+// contenedor de la lista de los comercios
+.commerce-list-container {
+  background-color: rgba($base-color-white, 0.2);
+  border-radius: $text-box-border-radius;
+  padding: 0.6rem 0.5rem;
+}
+
+// contenedor por defecto para la lista de los comercios
+.commerce-list-not-found {
+  height: 20vh;
+  background: url("~/img/commercial_allies/commercial_allies-lupa.png") center/contain no-repeat ;
+}
+
+// texto por defecto para la lista de los comercios
+.commerce-list-not-found-text {
+  color: rgba($base-color-white, 0.2);
+  font-size: 2rem;
+}
+
+// tabla de la lista de los comercios
+.commerce-list-table {
+  font-size: 0.8rem;
+  width: 98%;
+}
+
+// encabezados de tabla de la lista de los comercios
+.commerce-list-thead {
+  
+  tr{
+    padding: 0.1rem 0.8rem 0.1rem 0.8rem;
+
+    th {
+      padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+      border-bottom: white 1px solid;
+    }
+  }
+  
+}
+
+// contenedor tabla de la lista de los comercios
+.commerce-list-table-container {
+  background-color: rgba($base-color-white, 0.1);
+  color: $base-color-white;
+  border-radius: $text-box-border-radius;
+}

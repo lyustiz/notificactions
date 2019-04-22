@@ -1,0 +1,52 @@
+  // Estilo para el contenedor de la seccion
+  .faq-questions-section {
+    min-height: 92vh;
+    padding-top: 10vh;
+    @include linear-gradient(rgba($base-color-blue, 1), rgba($base-color-white, 1) , bottom);
+    color: $base-color-white; 
+  }
+  
+  .faq-question-banner {
+    height: 10vh; 
+    position: relative;
+
+    .faq-question-title{
+      position: absolute;
+      bottom: 0;
+      font-weight: bold;
+    }
+  } 
+
+  .faq-question-banner-what-is {
+    background:  url("~/img/faq/faq-banner-what-is.png") center/100% 100% no-repeat ;
+  }
+
+  .faq-question-banner-consumer {
+    background:  url("~/img/faq/faq-banner-consumer.png") center/100% 100% no-repeat ;
+  }
+
+  .faq-question-banner-commerce {
+    background:  url("~/img/faq/faq-banner-commerce.png") center/100% 100% no-repeat ;
+  }
+
+  .faq-question-banner-billing {
+    background:  url("~/img/faq/faq-banner-billing.png") center/100% 100% no-repeat ;
+  }
+
+
+  .related-topics {
+    padding-top: 6.5%;
+  }
+
+  .related-topics-links {
+    li {
+      border-bottom: 1px solid $base-color-magenta;
+      padding: 0.2rem;
+      font: normal normal bold 0.9rem/1.2rem $base-font-bold;
+    }
+  }
+
+
+  
+  
+  

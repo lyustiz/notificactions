@@ -1,0 +1,126 @@
+// Estilo para el contenedor de la seccion
+.faq-section {
+  min-height: 92vh;
+  padding-top: 10vh;
+  @include linear-gradient(rgba($base-color-blue, 1), rgba($base-color-white, 1) , bottom);
+  color: $base-color-white;
+  
+}
+
+.item-faq {
+  width: 100%;
+  height: 12vh;
+  border-radius: 0.4rem;
+  background-color: rgb(52, 94, 121);
+  overflow: hidden;
+}
+
+.item-faq-bg {
+  border-radius: 0.4rem;
+  color: $base-color-white;
+}
+
+.item-faq-text {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+  &:after {
+    position: relative;
+    float: right;
+    top: 0.6rem;
+    content: " \f0da";
+    font: $primary-font-icon;
+    font-size: 0.8rem;
+  }
+}
+
+.item-faq-what-is {             
+  background:  url("~/img/faq/faq-banner-what-is-mobile.png") right/cover no-repeat ;
+}
+
+.item-faq-commerce {
+  background:  url("~/img/faq/faq-banner-commerce-mobile.png") right/cover no-repeat ;
+}
+
+.item-faq-consumer {
+  background:  url("~/img/faq/faq-banner-consumer-mobile.png") right/cover no-repeat ;
+}
+
+.item-faq-billing {
+  background:  url("~/img/faq/faq-banner-billing-mobile.png") right/cover no-repeat ;
+
+}
+
+
+.faq-answers-container {
+  border-radius: 0.6rem;
+  background: rgba($base-color-white, 0.4) url("~/img/commercial_allies/commercial_allies-lupa.png") center/8rem auto no-repeat ;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.faq-answers {
+  border-radius: 0.6rem;
+  background-color: rgba($base-color-white, 0.4);
+}
+
+.faq-answers-title {
+  color: $base-color-blue; 
+}
+
+
+.icon-holder i{
+  padding: 0.8rem;
+}
+
+
+.faq-answers-text {
+  color: rgb(60, 60, 59); 
+}
+
+.faq-answers-detail {
+  color: $base-color-blue;
+  text-decoration: underline $base-color-magenta;
+  text-align: right;
+
+  &:after {
+    content: " \e918"; //tlp-icon-forward
+    font-family: $tlp-font-icons;
+    font-size: 0.8rem;
+    color: $base-color-magenta;
+  }
+}
+
+.link-detail {
+  color: $base-color-blue;
+  text-decoration: underline $base-color-magenta;
+  text-align: left;
+}
+
+.link-detail-arrow {
+  @extend .link-detail;
+  &:after {
+    content: " \e918"; //tlp-icon-forward
+    font-family: $tlp-font-icons;
+    font-size: 0.8rem;
+    color: $base-color-magenta;
+  }
+}
+
+
+.item-scroll {
+  position: absolute;
+  float: left;
+  width: 100%;
+  height: 10%;
+  text-align: center;
+  color: $base-color-magenta;
+  &:hover {
+    font-weight: bold; color: $base-color-blue;
+    cursor: pointer;
+  }
+
+}
+
+

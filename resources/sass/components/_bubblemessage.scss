@@ -1,0 +1,147 @@
+// mensaje de dialogo
+.bubble_message {
+	height: 5rem;
+	border-radius: 0.8rem;
+	@include linear-gradient($base-color-blue, $base-color-magenta, right);
+	color: $base-color-white;
+	overflow: hidden;
+	padding:  0 0.5rem 0 0.5rem;
+}
+//Diseño de las esferas
+.bubble_message::before {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 50%;
+	top: 130%;
+	content: "";
+	border: 1px none;
+	border-radius: 50%;
+	@include linear-gradient($base-color-blue, $base-color-magenta, right);
+	animation: effect-shadow 1s linear alternate forwards
+}
+//Viñeta que se ubica en el inferior de la burbuja
+.bubble_message::after {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 81%;
+	left: 50%;
+	@include linear-gradient($base-color-blue, $base-color-magenta, right);
+	content: "";
+	border: 2px none;
+	border-radius: 26%; 
+	transform: rotate(45deg);
+	z-index: -1;
+}
+
+
+ // Dibujo del circulo que se encuentra en la burbuja
+ .bubble_circle {
+	position: relative;
+	float: left;
+	top: 10%;
+	width: 4rem;
+	height: 4rem;
+	border: 0.1rem solid $base-color-white ;
+	padding: 0.5rem;
+	margin-right: 2%;
+
+	.bubble_number {
+		font: bold 2rem $base-font-bold;
+		text-align: center;
+	}
+}
+
+.bubble_text {
+	font-size: 0.8rem;
+	text-align: justify;
+	line-height: 100%;
+	overflow: hidden;
+	padding: 0.5rem 0 0.5rem 0 ;
+}
+
+#bubble_message1 {
+	visibility: hidden;
+	animation: effect-bubble 1s linear alternate forwards;
+}
+#bubble_message2 {
+	visibility: hidden;
+	animation: effect-bubble 1s linear alternate forwards 3s;
+}
+#bubble_message3 {
+	visibility: hidden;
+	animation: effect-bubble 1s linear alternate forwards 5.6s ;
+}
+
+@keyframes effect-bubble {
+	from {
+		opacity: 0;
+	}
+	to {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+@keyframes effect-shadow {
+  from {
+  	opacity: 0;
+  }
+  to {
+  	opacity: 1;
+  	@include sphere-shadows($base-color-magenta, 0.5rem, $base-color-magenta, 0.2rem );
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .bubble_message::before {
+  	width: 20px;
+  	height: 20px;
+  }
+  .bubble_message::after {
+  	width: 20px;
+  	height: 20px;
+  	top: 84%;
+  }
+}
+
+@media (min-width: 3840px) {
+  .bubble_message::after {
+  	width: 60px;
+	height: 60px;
+	top: 84%;
+  }
+  .bubble_message::before {
+  	width: 60px;
+  	height: 60px; 
+  }
+}
+@media (min-width: 2560px) and (max-width: 3200px) {
+	.bubble_message {
+  	  .bubble_text {
+  		font-size: 1.4rem;
+  	  }
+  }
+}
+@media (min-width: 901px) and (max-width: 1000px) {
+  .bubble_message {
+  	.bubble_text {
+  		font-size: 1.5rem;
+  	}
+  }
+}
+@media (min-width: 480px) and (max-width: 900px) {
+  .bubble_message {
+  	.bubble_text {
+  		font-size: 1rem;
+  	}
+  }
+}
+@media (min-width: 200px) and (max-width: 420px) {
+  .bubble_message {
+  	.bubble_text {
+  		font-size: 0.7rem;
+  	}
+  }
+}

@@ -1,0 +1,85 @@
+
+/// Mixin para producir prefijos de navegadores 
+/// Proximo a reemplzarse por el tool auto-prefixes
+/// @param {String} $property  - propiedad CSS sin prefijo
+/// @param {*}      $css-value - Valor CSS en crudo
+/// @param {List}   $prefixes  - Lista de prefijos ej ('webkit', 'ms')
+@mixin tp-prefix($property, $css-value, $prefixes: ()) {
+  
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $css-value;
+  }
+
+  #{$property}: $css-value;
+}
+
+
+/// Gradients
+
+//Linear Gradients 
+@mixin linear-gradient($color1, $color2, $direction, $percent-1: 0%, $percent-2: 100%) {
+  $ccs-value: linear-gradient(to $direction, $color1 $percent-1, $color2 $percent-2);
+  background: $color1; 
+
+  @include tp-prefix(background, $ccs-value, ('moz', 'webkit', 'o', 'ms'));
+}
+ 
+//Gradients Border
+@mixin borders-gradient($color1, $color2, $direction) {
+  $ccs-value: linear-gradient(to $direction, $color1 0%, $color2 100%);
+  border-color: $color1; 
+
+  @include tp-prefix(border-color, $ccs-value, ('moz', 'webkit', 'o', 'ms'));
+} 
+  
+
+/// Border-Radius
+
+@mixin border-radius($top, $left: 0, $botton: 0, $rigth: 0) {
+  $ccs-value:  $top $left $botton $rigth;
+
+  @if $left == 0 and $botton == 0 and $rigth == 0 {
+    $ccs-value: $top;
+  }
+    
+  @include tp-prefix(border-radius, $ccs-value, ('moz', 'webkit') );
+}
+
+
+/// Shadows
+
+@mixin shadows($top, $left, $botton, $rigth, $color) {
+  $ccs-value: $top, $left, $botton, $rigth $color;
+
+  @include tp-prefix(box-shadow, $ccs-value, ('moz', 'webkit') );
+}
+
+// Sphere Double Shadows 
+@mixin sphere-shadows($color-1, $size-1, $color-2, $size-2 ) {
+  $ccs-value:  0 0 0 $size-1 rgba($color-1, 0.2), 
+               0 0 0 $size-2 rgba($color-2, 0.2);
+
+  @include tp-prefix(box-shadow, $ccs-value, ('moz', 'webkit') );
+}
+
+
+///Positions
+
+//Position Absolute Centering
+@mixin absolute-centering {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  @include tp-prefix(transform, translate(-50%, -50%), ('moz', 'webkit') );
+}
+
+
+///Transform
+
+//sphere animate transform
+@mixin sphere-ring-position ($rotation, $translate) {
+  $ccs-value: rotate($rotation) translate($translate) rotate(-$rotation);
+
+  @include tp-prefix(transform, $ccs-value, ('moz', 'webkit') );
+}

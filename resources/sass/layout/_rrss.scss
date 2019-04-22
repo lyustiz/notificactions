@@ -1,0 +1,35 @@
+
+//barra de iconos de redes sociales posicion fixed
+.social-networks {
+    left: 1.3rem;
+    top: 40%;
+    z-index: 100;
+    width: 2.2rem;
+    height: 6.5rem;
+    background-color: rgba($rrss-bar-color, 0.6);
+    line-height: 1;
+  }
+  //social-networks-icon
+  .social-networks{
+
+    a:hover {
+      text-decoration: none !important;
+    }
+
+    i {
+      width: 1.5rem;
+      height: 1.5rem;
+      color: rgba($rrss-icon-color, 0.4);
+      cursor: pointer;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+  
+    .social-networks {
+      left: 0.8rem;
+    }
+    
+  }
+
+  

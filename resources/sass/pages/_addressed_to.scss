@@ -1,0 +1,452 @@
+.addressed {
+  height: 100vh;
+}
+// Titulo que se encuentra en la parte superior del carrusel
+.addressed-text {
+  font: bold 2rem $base-font-bold;
+  color: #ffff;
+  margin-top: 8%;
+}
+.button-info {
+  width: 25%;
+  border-width: 0.8px;
+  border-style: solid;
+  border-color: $base-color-blue;
+
+}
+//Boton flotante;
+.button-float {
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: $base-color-white;
+  display: scroll;
+  position: fixed;
+  cursor: pointer;
+  bottom: 10%;
+  margin-left: 94%;
+  border-radius: 100px;
+}
+
+.button-float:hover {
+  transition: 1s;
+}
+.fa-arrow-up {
+  position: relative; 
+  left: 30%; 
+  top: 25%;
+  font-size: 20px;
+  bottom: 10rem; 
+  color: white;
+}
+// clase del diseño en el cuadro de consumidor y comercio
+.square-content {
+  border-radius: 20px;
+  border-style: none;
+  background-color: #ffff;
+  margin-right: 3%; 
+  padding: 1%;
+
+  .square-title {
+  	margin-left: 1%;
+  	color: $base-color-grey;
+    font: bold 12px $base-font-bold;
+
+    .text {
+      color: $base-color-blue;
+      font-family: $base-font-bold; 
+      font-weight: normal; 
+      font-size: 12px;
+      line-height: 100%;
+    }
+    .square-button {
+  	  position: relative; 
+  	  left: 60%;
+  	  bottom: 5%;
+      background-color: #ffff;
+  	  border: 1px solid;
+  	  border-radius: 15px;
+  	  font-family: $base-font-bold;
+  	  font-size: 12px;
+  	  font-weight: bold;
+  	  color: $base-color-blue;
+  	  padding: 1% 5% 1% 5%;
+      @include borders-gradient($base-color-blue, $base-color-magenta, left);
+      border-image-slice: 1;
+  	}
+  }
+}
+// Tamaño del iconos de comercio y consumidor
+.square-img {
+  width: 20%;
+}
+//Margen entre esferas
+.square-margin {
+  margin-top: 3%;
+}
+
+@include media-breakpoint-down(xl) { 
+ .small-screen {
+    display: none;
+  }
+  .square-margin {
+    margin-top: 5%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .addressed-text {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 200px) and (max-width: 600px) {
+  .addressed-text {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0;
+  }
+  .button-float {
+    margin-left: 70%;
+  }
+  .square-content {
+    .square-title {
+      font-size: 2rem;
+
+      p {
+        font-size: 0.6rem;
+        color: $base-color-blue;
+      }
+    }
+  }
+  .square-img {
+    display: none;
+  }
+   .small-screen {
+     display: inline;
+  }
+   .big-screen {
+     display: none;
+  }
+}
+@media (min-width: 640px) and (max-width: 720px) {
+  .addressed-text {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0;
+  }
+  .button-float {
+    margin-left: 85%;
+  }
+  .square-content {
+    .square-title {
+      font-size: 2rem;
+
+      p {
+        font-size: 0.8rem;
+        color: $base-color-blue;
+      }
+      .square-button {
+        left: 28rem;
+      }
+    }
+  }
+  .square-img {
+    display: none;
+  }
+   .small-screen {
+     display: inline;
+  }
+   .big-screen {
+     display: none;
+  }
+}
+@media (min-width: 736px) and (max-width: 799px) {
+  .addressed-text {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 0;
+  }
+  .button-float {
+    margin-left: 85%;
+  }
+  .square-content {
+    .square-title {
+      font-size: 2rem;
+
+      p {
+        font-size: 0.8rem;
+        color: $base-color-blue;
+      }
+      .square-button {
+        left: 28rem;
+      }
+    }
+  }
+  .square-img {
+    display: none;
+  }
+   .small-screen {
+     display: inline;
+  }
+   .big-screen {
+     display: none;
+  }
+
+}
+// Media query configurado al tamaño de las siguiente pantalla
+@media only screen and (min-width: 800px) and (max-width: 1024px) {
+  .addressed-text {
+    font-size: 30px; 
+    color: #ffff; 
+    font-weight: bold 
+  }
+  .addressed-text {
+    font: bold 2rem $base-font-bold;
+    color: #ffff;
+    margin-top: 0;
+  }
+  .big-screen {
+    display: none;
+  }
+
+  .small-screen {
+    display: inline;
+  }
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+    height: 20%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-family: $base-font-bold; 
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue;
+        font-family: $base-font-regular; 
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        font-family: $base-font-bold;
+        position: relative;
+        left: 76%; 
+        bottom: 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+        border-image-slice: 1;
+      }
+    }
+  }
+  .square-img {
+    width: 10%;
+  }
+  .square-margin {
+    margin-top: 3%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .button-float {
+    margin-left: 90%;
+    margin-bottom: 2%;
+  }
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue;
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 65%;
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 12px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, right);
+        border-image-slice: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue;
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 70%;
+        bottom: 5%;
+        border: 1.2px solid;
+        font-family: $base-font-bold;
+        font-size: 12px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-magenta, $base-color-blue, left);
+        border-image-slice: 1;
+        border-radius: 25px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1660px) and (max-width: 1920px) {
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue; 
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 70%;
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 12px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+        border-image-slice: 1;
+      }
+    }
+  }
+}
+
+// Media query para pantalla 4K
+@media only screen and (min-width: 2560px) and (max-width: 3000px) {
+  
+  .addressed-text {
+    font-size: 2.3rem; 
+    color: #ffff; 
+    font-weight: bold;
+  }
+  .fa-arrow-up {
+    position: relative; 
+    left: 30%; 
+    top: 25%;
+    font-size: 1.4rem;
+    bottom: 10rem; 
+    color: white;
+  } 
+  .square-content {
+    height: 10rem;
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-weight: bold; 
+      font-size: 60px;
+
+      p {
+        font-weight: normal; 
+        font-size: 30px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 75%;
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 25px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+        border-image-slice: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: 3840px) and (max-width: 4000px) {
+  .button-float {
+    margin-left: 90%;
+    margin-bottom: 2%;
+  }
+  .square-content {
+    .square-title {
+      font-size: 60px;
+
+      p {
+        font-size: 30px;
+      }
+      .square-button {
+        left: 74%;
+        font-size: 30px;
+      }
+    }
+  }
+  .fa-arrow-up {
+    position: relative; 
+    left: 30%; 
+    top: 25%;
+    font-size: 60px;
+    bottom: 10rem; 
+    color: white;
+  }
+}

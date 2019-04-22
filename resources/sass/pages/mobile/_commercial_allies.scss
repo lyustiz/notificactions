@@ -1,0 +1,93 @@
+// Estilo para el contenedor de la seccion
+.commercial-allies-section {
+  min-height: 92vh;
+  padding-top: 10vh;
+  @include linear-gradient(rgba($base-color-blue, 1), rgba($base-color-black, 0.8) , bottom, 70%, 100%);
+  color: $base-color-white;
+}
+
+// modificaciones del estilo base del carousel
+.allies-carousel-control {
+  width: 5% !important;
+}
+ 
+.allies-carousel-img-container {
+  background-color: rgba(darken($base-color-blue, 25%), 0.3);
+  border-radius: 0.7rem;
+  text-align: center;
+}
+
+.allies-carousel-indicator-holder {
+  bottom: auto;
+}
+
+.allies-carousel-indicator {
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 50%;
+  background-color: rgba($base-color-white, 0.9) !important;
+}
+
+
+.form-allies input {
+  font-size: 1.5rem;
+}
+
+// contenedor de la lista de los comercios
+.commerce-list-container {
+  background-color: rgba($base-color-white, 0.2);
+  border-radius: $text-box-border-radius;
+}
+
+// contenedor por defecto para la lista de los comercios
+.commerce-list-not-found {
+  height: 18vh;
+  background: url("~/img/commercial_allies/commercial_allies-lupa.png") center/20vh auto no-repeat ;
+}
+
+// texto por defecto para la lista de los comercios
+.commerce-list-not-found-text {
+  color: rgba($base-color-white, 0.2);
+  font-size: 2rem;
+}
+
+// tabla de la lista de los comercios
+.commerce-list-table {
+  width: 96%;
+  height: 25vh;
+  font-size: 1rem;
+}
+
+// encabezados de tabla de la lista de los comercios
+.commerce-list-thead {
+  
+  tr{
+    padding: 0.1rem 0.8rem 0.1rem 0.8rem;
+
+    th {
+      padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+      border-bottom: white 1px solid;
+    }
+  }
+  
+}
+
+// contenedor tabla de la lista de los comercios
+.commerce-list-table-container {
+  background-color: rgba($base-color-white, 0.1);
+  color: white;
+  border-radius: $text-box-border-radius;
+  
+}
+
+// modificacion de los estilos de los select
+.slt-commerce-filter {
+  appearance: none;
+  background-color: unset;
+  border: 0;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 0.8rem;
+  padding: 0.01rem;
+  margin: 0.2rem;
+}

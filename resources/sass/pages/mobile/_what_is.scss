@@ -1,0 +1,90 @@
+.text-box-circle {
+  position: absolute;
+  top: 10%;
+  left: -12%;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include linear-gradient($base-color-blue, $base-color-magenta, right);  
+  i {
+    font-size: 1.7rem;
+    vertical-align: middle; 
+  }
+}
+
+.text-box-text {
+  padding: 0.3rem;
+  font-size: 0.79rem;
+  margin-left: 8%;
+  overflow: hidden;
+}
+
+// contenedor de los items de descripcion de la seccion "que es?"
+.what-is-text-box {
+  background-color: lighten($base-color-grey, 10%);
+  width: 90%;
+  max-width: 20rem;
+  height: 4rem;
+  max-height: 4rem;
+  border-radius: 1rem;  
+  margin: 0.2rem;
+}
+
+// contenedor del anillo animado
+.ring-holder {
+  @include absolute-centering; 
+}
+
+// semi-circulo lateral
+.ring {
+  left: -9rem;
+  width: 15rem; 
+  height: 100%;
+  border: solid 0.05rem $base-color-magenta;
+}
+
+// desplazamiento circular de los cuadros de texto
+.text-box-1, .text-box-6{
+  transform: translate(4%) ;
+}
+
+.text-box-2, .text-box-5{
+  transform:  translate(10%);
+}
+
+.text-box-3, .text-box-4  {
+  transform:  translate(15%);
+}
+
+
+//media querys
+@include media-breakpoint-up(sm) {
+
+  .what-is-text-box {
+    max-width: 50rem;
+    height: 5.5rem;
+    max-height: 6rem;
+  }
+
+  .text-box-circle {
+    left: -3.5rem;
+    height: 5rem;
+    width: 5rem;
+    i {
+      font-size: 2.9rem;
+      vertical-align: middle; 
+    }
+  }
+
+  .text-box-text {
+    padding: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .ring {
+    width: 17rem; 
+  }
+
+}

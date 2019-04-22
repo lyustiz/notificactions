@@ -1,0 +1,15 @@
+letras.txt
+Nunito-BlackItalic.ttf
+Nunito-Black.ttf
+Nunito-BoldItalic.ttf
+Nunito-Bold.ttf
+Nunito-ExtraBoldItalic.ttf
+Nunito-ExtraBold.ttf
+Nunito-ExtraLightItalic.ttf
+Nunito-ExtraLight.ttf
+Nunito-Italic.ttf
+Nunito-LightItalic.ttf
+Nunito-Light.ttf
+Nunito-Regular.ttf
+Nunito-SemiBoldItalic.ttf
+Nunito-SemiBold.ttf

@@ -1,0 +1,294 @@
+.addressed {
+  height: 200%;
+}
+// Titulo que se encuentra en la parte superior del carrusel
+.addressed-text {
+  font-size: 35px; 
+  color: #ffff; 
+  font-weight: bold;
+}
+.button-info {
+  width: 25%;
+  border-width: 0.8px;
+  border-style: solid;
+  border-color: $base-color-blue;
+  background-color: $base-color-white;
+
+}
+// clase del diseño en el cuadro de consumidor y comercio
+.square-content {
+  border-radius: 20px;
+  border-style: none;
+  background-color: #ffff;
+  margin-right: 3%; 
+  padding: 1%;
+
+  .square-title {
+  	margin-left: 1%;
+  	color: $base-color-dark-grey;
+    font-family: calibri; 
+    font-weight: bold; 
+    font-size: 25px;
+
+    p {
+      color: $base-color-blue;
+      font-family: arial; 
+      font-weight: normal; 
+      font-size: 12px;
+      line-height: 100%;
+    }
+    .square-button {
+  	  position: relative; 
+  	  left: 60%;
+  	  bottom: 5%;
+  	  border: 1px solid;
+  	  border-radius: 5px;
+  	  background-color: $base-color-white;
+  	  font-family: $base-font-bold;
+  	  font-size: 12px;
+  	  font-weight: bold;
+  	  color: $base-color-blue;
+  	  padding: 1% 5% 1% 5%;
+  	  @include borders-gradient($base-color-blue, $base-color-magenta, left);
+  	}
+  }
+}
+// Tamaño del iconos de comercio y consumidor
+.square-img {
+  width: 20%;
+}
+//Margen entre esferas
+.square-margin {
+  margin-top: 3%;
+}
+
+@include media-breakpoint-down(xl) { 
+ .small-screen {
+    display: none;
+  }
+  .square-margin {
+    margin-top: 5%;
+  }
+}
+// Media query configurado al tamaño de las siguiente pantalla
+@media only screen and (max-width: 1024px) {
+  .addressed-text {
+    font-size: 30px; 
+    color: #ffff; 
+    font-weight: bold 
+  }
+  .big-screen {
+    display: none;
+  }
+
+  .small-screen {
+    display: inline;
+  }
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-family: calibri; 
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue;
+        font-family: arial; 
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative;
+        left: 90%; 
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 12px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+      }
+    }
+  }
+  .square-img {
+    width: 10%;
+  }
+  .square-margin {
+    margin-top: 3%;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-family: calibri; 
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue;
+        font-family: arial; 
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 65%;
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 12px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1366px) and (max-width: 1600px) {
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-family: calibri; 
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue;
+        font-family: arial; 
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 70%;
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 12px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1660px) and (max-width: 1920px) {
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-family: calibri; 
+      font-weight: bold; 
+      font-size: 25px;
+
+      p {
+        color: $base-color-blue;
+        font-family: arial; 
+        font-weight: normal; 
+        font-size: 12px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 70%;
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 12px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+      }
+    }
+  }
+}
+
+// Media query para pantalla Ultra 4K
+@media only screen and (min-width: 2160px) and (max-width: 3840px) {
+  .addressed-text {
+    font-size: 60px; 
+    color: #ffff; 
+    font-weight: bold;
+  }
+  .square-content {
+    border-radius: 20px;
+    border-style: none;
+    background-color: #ffff;
+    margin-right: 3%; 
+    padding: 1%;
+
+    .square-title {
+      margin-left: 1%;
+      color: $base-color-dark-grey;
+      font-family: calibri; 
+      font-weight: bold; 
+      font-size: 60px;
+
+      p {
+        color: $base-color-blue;
+        font-family: arial; 
+        font-weight: normal; 
+        font-size: 30px;
+        line-height: 100%;
+      }
+      .square-button {
+        position: relative; 
+        left: 75%;
+        bottom: 5%;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: $base-color-white;
+        font-family: $base-font-bold;
+        font-size: 25px;
+        font-weight: bold;
+        color: $base-color-blue;
+        padding: 1% 5% 1% 5%;
+        @include borders-gradient($base-color-blue, $base-color-magenta, left);
+      }
+    }
+  }
+}

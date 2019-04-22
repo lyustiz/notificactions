@@ -1,0 +1,122 @@
+// Estilo para el contenedor de la seccion
+.benefits-section {
+  min-height: $height-inner-page;
+  padding-top: $padding-top-inner-page;
+  @include linear-gradient(rgba($base-color-blue, 1), rgba($base-color-blue, 0.01) , bottom, 20%, 90%);
+  color: $base-color-white;
+}
+
+// contenedor de la imagen de fondo
+
+.benefits-img-container { 
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: $height-inner-page - 10vh;
+  overflow: visible;
+  
+  img {
+      height: 100%;
+  }
+}
+
+// contenedor de la seccion de informacion
+
+ //contenedor con animacion: deslizamiento a la izquierda
+.benefits-info-container {
+  position: absolute;
+  top: 16vh;
+  right: 0;
+  width: 100%;
+  min-height: 65vh;
+  animation: animate-slide-show-to-left 1s 1 linear;
+}
+
+.benefits-info-container-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  background-color: $base-color-blue;
+  color: $base-color-white;
+  font-size: 1.2rem;
+}
+
+.benefits-info-container-text {
+  color: rgb(60, 60, 59);
+  font-size: 1.1rem;
+}
+
+// Boton gris con circulo
+// hover: aumenta levemente de tama;o
+.benefits-btn {
+  display: inline-block; 
+  transition: all 0.2s;
+  
+  &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+
+  }  
+}
+
+.benefits-btn-circle {
+  float: right;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem;
+  margin-left: -0.2rem;
+  background-color: rgba($button-circle-color, 0.8);
+  color: rgba($base-color-white, 0.5);
+  font-size: 1.3rem;
+  box-shadow:  0 0 0 0.15rem rgba($base-color-white, 0.8), 
+                0 0 0 0.3rem rgba($button-circle-color, 0.8);
+}
+
+.benefits-btn-text {
+  float: left;
+  min-width: 8.5rem;
+  height: 1.7rem;
+  margin-top: 0.35rem;
+  padding: 0.1rem;
+  border-radius: 0.2rem; 
+  background-color: rgba($button-circle-color, 0.8);
+  color: rgba($base-color-white, 0.8);
+  text-align: center;
+}
+
+// redondeado de bordes izquierdo de la seccion de informacion
+.border-rounded-left {
+    border-radius:  $text-box-border-radius 0 0  $text-box-border-radius; 
+}
+
+
+//fondo de la seccion de informacion de consumidor
+.info-consumer-bg {
+    background-image: url("~/img/benefits/bg-icon-consumer.png"), 
+                      linear-gradient(rgba($base-color-white, 0.4),rgba($base-color-blue, 0.2));
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position-x: -1.3rem;
+}
+
+//fondo de la seccion de informacion de comercio
+.info-commerce-bg {
+  @extend .info-consumer-bg;
+  background-image: url("~/img/benefits/bg-icon-commerce.png"), 
+                    linear-gradient(rgba($base-color-white, 0.4),rgba($base-color-blue, 0.2));
+}
+
+
+
+// Keyframes
+
+// animacion: deslizamiento a la izquierda para capa de informacion
+@keyframes animate-slide-show-to-left {
+    0%   {width: 50%;}
+    100% {width: 100%}
+  }

@@ -1,0 +1,58 @@
+/**  COLORS  **/
+
+//Genric Base Colors
+$base-color-white: rgb(255, 255, 255);
+$base-color-black: rgb(0, 0, 0);
+
+//Base colors TuLoPagas
+$base-color-blue: rgb(7, 59, 90);
+$base-color-magenta: rgb(231, 54, 88);
+$base-color-grey: rgb(198, 198, 198);
+$base-color-dark-grey: rgb(158, 157, 156);
+
+// Button Circle
+$button-circle-color: rgb(182, 181, 180);
+
+// Social Networks
+$rrss-bar-color: rgb(198, 198, 198);
+$rrss-icon-color: rgb(255, 255, 255);
+
+$instagram-color:rgba(193, 53, 132, 1);
+$facebook-color:rgba(59, 89, 152, 1);
+$twitter-color:rgba(85, 172, 238, 1);
+
+
+/**  TEXT  **/
+
+//General text attributes
+$base-font-regular: 'Nunito-Regular', sans-serif;
+$base-font-bold: 'Nunito-Bold', sans-serif;
+$primary-text-color: $base-color-blue;
+$secundary-text-color: $base-color-white;
+
+/** ICON **/
+$primary-font-icon: normal normal normal 14px/1 FontAwesome;
+$secundary-font-icon: 'Nunito-Regular', sans-serif;
+
+
+
+/** LAYOUT   **/
+$height-inner-page: 92vh;
+$padding-top-inner-page: 12vh;
+
+
+
+/**  OTHERS  **/
+
+//text box
+$text-box-border-radius: 0.8rem;
+$text-box-padding: 0 0.5rem 0 0.5rem;
+
+//ring-animate section what-is (Que es?)
+$ring-diameter: 22rem; 
+$ring-radius:   $ring-diameter / 2;
+$sphere-size:   $ring-diameter * 0.1;
+$sphere-resize: $sphere-size * 1.4;
+$ring-center:   $ring-radius - ( $sphere-size / 2 );
+$phone-height:  $ring-diameter * 1.1;
+$phone-width:   $phone-height / 2;

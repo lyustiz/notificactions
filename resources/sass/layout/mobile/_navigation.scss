@@ -1,0 +1,102 @@
+.btn-session {
+  width: 7.5rem;
+  margin: 0.6rem; 
+}
+
+nav {
+  z-index: 3000;
+}
+
+.btn-register {
+  width: 7.5rem;
+  margin: 0.6rem;
+  border: 0;
+  @include linear-gradient($base-color-blue, $base-color-magenta, right);
+  color: $base-color-white;
+  font-weight: bold;
+}
+
+.btn-register-white {
+  color: $base-color-blue !important;
+  background: none $base-color-white !important;
+}
+
+.logo-principal {
+  display: block;
+  max-width: 8rem;
+  padding-bottom: 0.9rem;
+  
+  img {
+    width: 100%
+  }
+}
+
+.navbar-show {
+  background-color: rgba($base-color-blue, 1) ;
+}
+
+.menu-container {
+  a {
+    color: $base-color-white;
+    font-family: $base-font-bold;
+
+    &:hover {
+      text-decoration: none !important;
+    }
+  }
+}
+
+.menu-item {
+  min-height: 12.5vh;
+  text-align: center;
+
+  h6 {
+    color: $base-color-magenta;
+    font-family: $base-font-bold;
+  }
+}
+
+.menu-item-login {
+  background: $base-color-blue url("../img/menu/menu_register_bg.png") right/55% 100% no-repeat;
+  a {
+    line-height: 12.5vh;
+  }
+}
+
+.menu-item-what-is {
+  background-color: mix($base-color-black, $base-color-blue, 50%);
+}
+
+.menu-item-how-work {
+  background-color: mix($base-color-black, $base-color-blue, 40%); 
+}
+
+.menu-item-address-to-commerce {
+  background-color: mix($base-color-black, $base-color-blue, 30%); 
+}
+
+.menu-item-address-to-consumer {
+  background-color: mix($base-color-black, $base-color-blue, 20%); 
+}
+
+.menu-item-comercial-allies {
+  background-color: mix($base-color-black, $base-color-blue, 10%); 
+}
+
+.menu-item-download-app {
+  background: $base-color-blue url("../img/menu/menu_banner_mobile.png") center/cover no-repeat;
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+
+.nav-button {
+  color: $base-color-magenta !important;
+  border: 0 !important;
+  
+  i {
+    font-size: 1.5rem;
+  }
+}
+

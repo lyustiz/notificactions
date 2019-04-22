@@ -1,0 +1,149 @@
+.benefits-section{
+  min-height: 92vh;
+  padding-top: 10vh;
+  @include linear-gradient(rgba($base-color-blue, 1), rgba($base-color-white, 1) , bottom);
+  color: $base-color-blue;
+}
+
+// contenedor de la imagen de fondo
+
+.benefits-img-container{ 
+  position: absolute;
+  img {
+      position: absolute;
+      bottom: 8vh;
+      right: 0;
+      height: 80%;
+      width: auto;
+  }
+}
+
+// contenedor de la seccion de informacion
+
+.benefits-info-container {
+  margin-top: 10vh;
+  min-height: 55vh;
+}
+
+.benefits-info-container-title{
+  font-size: 3rem;
+}
+
+.benefits-info-container-icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $base-color-blue;
+  color: $base-color-white;
+  font-size: 1.65rem;
+}
+
+.benefits-info-container-text {
+  font-size: 1.1rem;
+  color: rgb(60, 60, 59);
+}
+
+
+// Boton gris con circulo
+
+.benefits-btn {
+  display: inline-block; 
+  transition: all 0.2s;
+  
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+  }  
+}
+
+.benefits-btn-circle {
+  float: right;
+  width: 2.3rem;
+  height: 2.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.1rem;
+  margin-left: -0.2rem;
+  background-color: rgba($button-circle-color, 0.8);
+  color: rgba($base-color-white, 0.5);
+  font-size: 1.3rem;
+  box-shadow:  0 0 0 0.15rem rgba($base-color-white, 0.8), 
+               0 0 0 0.3rem rgba($button-circle-color, 0.8);
+}
+
+.benefits-btn-text {
+  float: left;
+  min-width: 8.5rem;
+  height: 1.7rem;
+  margin-top: 0.35rem;
+  padding: 0.1rem;
+  border-radius: 0.2rem; 
+  background-color: rgba($button-circle-color, 0.8);
+  color: rgba($base-color-white, 0.8);
+  text-align: center;
+}
+
+
+
+.info-consumer-bg {
+  background: rgba($base-color-white, 0.8) url("~/img/benefits/bg-icon-consumer.png") left/contain no-repeat;
+}
+
+.info-commerce-bg {
+  background: rgba($base-color-white, 0.8) url("~/img/benefits/bg-icon-commerce.png") left/contain no-repeat;
+}
+
+
+
+
+/** MEDIA QUERYS **/
+
+@media (max-height: 639px ), (max-width: 360px ) { 
+  
+  .benefits-info-container {
+    margin-top: 14vh;
+  }
+
+  .benefits-info-container-title {
+    font-size: 2.5rem;
+  }
+
+  .benefits-info-container-text {
+    font-size: 0.8rem;
+  }
+
+  .benefits-info-container-icon {
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.45rem;
+  }
+}
+
+@media (min-width: 600px ) { 
+  
+
+  .benefits-info-container-title {
+    font-size: 4rem;
+  }
+
+  .benefits-info-container-text {
+    font-size: 1.8rem;
+  }
+
+  .benefits-info-container-icon {
+    height: 3rem;
+    width: 3rem;
+    font-size: 2.1rem;
+  }
+
+  .benefits-btn {
+    transform: scale(1.4);
+
+    &:hover{
+      transform: scale(1.6);
+    }
+  }  
+}

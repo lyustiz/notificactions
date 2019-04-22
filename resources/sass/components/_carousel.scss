@@ -1,0 +1,135 @@
+.carousel-edit {
+	margin-left: 5%;
+}
+.carousel-indicators li {
+	width: 6px;
+    height: 6px;
+	display: inline-block;
+    position: relative;
+    margin: 5px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    border: 1px solid $base-color-dark-grey;
+    background-color: transparent  
+}
+.carousel-indicators .active {
+    width: 6px;
+    height: 6px;
+    margin: 5px;
+    border: 1 none;
+    background-color: $base-color-dark-grey;
+ 
+}
+.carousel-img {
+	width: 25%;
+	margin-left: 3%;
+}
+@media (min-width: 200px) and (max-width: 321px) {
+  .carousel-img {
+    width: 5rem;
+    margin-left: 0; 
+  }
+  .carousel-indicators {
+    top: 2rem;
+  }
+  .carousel-desktop {
+    display: none;
+  }
+}
+@media (min-width: 360px) and (max-width: 410px) {
+  .carousel-img {
+      width: 5rem;
+      margin-left: 0; 
+  }
+  .carousel-indicators {
+    top: 2rem;
+  }
+  .carousel-desktop {
+    display: none;
+  }
+  .carousel-resposive {
+    margin-top: 2rem;
+  }
+}
+@media (min-width: 414px) and (max-width: 460px) {
+  .carousel-img {
+      width: 7rem;
+      margin-left: 0; 
+  }
+  .carousel-indicators {
+    top: 3rem;
+  }
+  .carousel-desktop {
+    display: none;
+  }
+  .carousel-resposive {
+    margin-top: 2rem;
+  } 
+}
+@media (min-width: 480px) and (max-width: 900px) {
+  .carousel-img {
+    width: 9rem;
+    margin-left: 0; 
+  }
+  .carousel-indicators {
+    top: 4rem;
+  }
+  .carousel-desktop {
+    display: none;
+  }
+}
+@media (min-width: 1024px) and (max-width: 2000px){
+  .carousel-resposive {
+    display: none;
+  }
+}
+@media only screen and (min-width: 2160px) and (max-width: 3840px) {
+  .carousel-container {
+    width: 20rem;
+  }
+  .carousel-edit {
+    margin-right: 4rem;
+  }
+  .carousel-img {
+    width: 10rem;
+    margin-left: 4%;
+  }
+}
+
+@media (min-width: 3840px) and (max-width: 4000px) {
+  .carousel-container {
+    width: 20rem;
+  }
+  .carousel-edit {
+    margin-right: 21rem;
+  }
+  .carousel-img {
+    width: 20rem;
+    margin-left: 4%;
+  }
+  .carousel-indicators li {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    text-indent: 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    border: 1px solid $base-color-dark-grey;
+    background-color: transparent  
+  }
+  .carousel-indicators .active {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border: 1 none;
+    background-color: $base-color-dark-grey;
+  }
+  .carousel-resposive {
+    display: none;
+  }
+}

@@ -1,0 +1,474 @@
+.animation-container {
+  width: 35rem; 
+  position: relative;
+  left: 17rem; 
+  bottom: 20.1rem;
+
+  .animation-line {
+    position: relative;
+    left: 1.5rem;
+  }
+  .animation-line2 {
+    position: relative;
+    left: 10rem;
+  }
+}
+// Animacion de la primera linea 
+.draw-line-1,.draw-line-2,.draw-line-3 {
+  fill:none;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+  stroke-width:8px;
+}
+
+.draw-line-1 {
+  stroke:url(#gradients-master);
+}
+.draw-line-2{
+  stroke:url(#gradients-children1);
+}
+.draw-line-3{
+  stroke:url(#gradients-children2);
+   
+}
+
+.draw-line-1,.draw-line-2 ,.draw-line-3 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2.4s linear alternate forwards 2s;
+}
+
+.draw-line-3 {
+  animation-delay: 2.9s;
+}
+
+/* Animacion de la segunda linea para separar los tiempo y no se ejecute
+las dos ala vez cambiando su clases*/
+.draw-line-2-1,.draw-line-2-2,.draw-line-2-3 {
+  fill:none;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+  stroke-width:8px;
+}
+
+.draw-line-2-1 {
+  stroke:url(#gradients-master);
+}
+.draw-line-2-2{
+  stroke:url(#gradients-children1);
+}
+.draw-line-2-3{
+  stroke:url(#gradients-children2);
+   
+}
+
+.draw-line-2-1,.draw-line-2-2 ,.draw-line-2-3 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 2.8s linear alternate forwards 4.1s;
+}
+
+.draw-line-2-3 {
+  animation-delay: 5.2s;
+}
+
+.fake-line {
+  fill:none;
+  stroke-miterlimit:10;
+  stroke: url(#Degradado_fake_line);
+  stroke-dasharray: 10 20; 
+  stroke-width:10px;
+}
+.fake-line2 {
+  fill:none;
+  stroke-miterlimit:10;
+  stroke: url(#Degradado_fake_line2);
+  stroke-dasharray: 10 20; 
+  stroke-width:10px;
+}
+
+svg{
+    width: 100%;
+}
+
+.functions-info {
+  height: 30%;
+  width: 100%;
+  padding: 1rem;
+}
+.img-adaptation {
+  width: 100rem; 
+  height: 100%;
+}
+.method-pay {
+  position: relative;
+  float: right;
+  right: 5%;
+
+  .method-pay-img1 {
+    margin-right: 5%; 
+    width: 20%;
+    height: 100%;
+
+  }
+  .method-pay-img2 {
+    margin-right: 5%; 
+    width: 10%;
+    height: 100%;
+  }
+  .method-pay-img3 { 
+    width: 8%;
+    height: 100%;
+  }
+
+}
+.method-pay-text {
+  font: normal 14px $base-font-regular;
+  color: $base-color-blue;
+  margin-right: 3%; 
+}
+
+.mode-responsive-mobile {
+  display: none;
+}
+
+.sphere-functions-holder {
+  text-align: center;
+  height: 5rem;
+}
+.sphere-margin-1 {
+  margin: 0 0 0 80%;
+}
+.sphere-margin-2 {
+  @extend .sphere-margin-1;
+  left: 35%;
+}
+
+.sphere-functions {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 0;
+  border-radius: 100%;
+  font-family: calibri;
+  font-size: 12px; 
+  color: $base-color-blue;
+  visibility: hidden;
+  @include linear-gradient($base-color-blue, $base-color-magenta, right);
+  animation: efect-shadow 1s linear alternate forwards;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes efect-shadow {
+   from {
+    box-shadow: 0;
+    opacity: 0;
+  }
+  to { 
+    visibility: visible;
+    opacity: 1;
+    @include sphere-shadows($base-color-magenta, 0.5rem, $base-color-magenta, 0.2rem ); 
+  }
+}
+@include media-breakpoint-down(xl) {
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 5%; 
+      width: 15%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 5%; 
+      width: 10%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 6%;
+      height: 100%;
+    }
+  }
+  .method-pay-text {
+    margin-right: 2%;
+    font-size: 16px;  
+  }
+}
+@include media-breakpoint-down(lg) {  
+
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 5%; 
+      width: 15%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 5%; 
+      width: 8%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 6%;
+      height: 100%;
+    }
+  }
+  .method-pay-text {
+    margin-right: 2%;
+    font-size: 12px;  
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .mode-web {
+    display: none;
+  }
+  .method-pay {
+    display: none;
+  }
+  .mode-responsive-mobile {
+    display: inline;
+    .jump-line {
+      margin-bottom: 5%;
+    }
+  }
+  .img-adaptation {
+    visibility: hidden;
+  }
+
+}
+@media only screen and (min-width: 3840px) and (max-width: 4000px) {
+  .animation-container {
+    width: 35rem;
+    height: 15rem;
+    position: relative;
+    left: 19rem; 
+    bottom: 24.1rem;
+
+    .animation-line {
+      position: relative;
+      left: 1.5rem;
+    }
+    .animation-line2 {
+      position: relative;
+      left: 10rem;
+    }
+  }
+  .method-pay-text {
+    font: normal 40px $base-font-regular;
+    color: $base-color-blue;
+    margin-right: 1%; 
+  }
+}
+@media (min-width: 2560px) and (max-width: 3200px) {
+  .animation-container {
+    width: 64rem; 
+    height: 18rem;
+    position: relative;
+    left: 35rem; 
+    bottom: 30.1rem;
+
+  .animation-line {
+    position: relative;
+    left: 1.5rem;
+  }
+  .animation-line2 {
+    position: relative;
+    left: 16rem;
+  }
+}
+  .img-adaptation {
+    width: 141rem; 
+    height: 33rem;
+  }
+  .method-pay-text {
+    font: normal 30px $base-font-regular;
+    color: $base-color-blue;
+    margin-right: 1%; 
+  }
+}
+@media only screen and (min-width: 1920px) and (max-width: 2480px) {
+  .animation-container {
+    width: 60rem; 
+    left: 20.5rem; 
+    bottom: 24.4rem;
+
+    .animation-line {
+      position: relative;
+      left: 2rem;
+    }
+    .animation-line2 {
+      left: 5rem;
+    }
+  }
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 4%; 
+      width: 12%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 4%; 
+      width: 7%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 5%;
+      height: 100%;
+    }
+  }
+}
+@media only screen and  (min-width: 1680px) and (max-width: 1900px) {
+  .animation-container {
+    width: 43rem; 
+    left: 21rem; 
+    bottom: 24rem;
+
+    .animation-line {
+      position: relative;
+      left: 2rem;
+    }
+    .animation-line2 {
+      left: 12rem;
+    }
+  }
+}
+@media only screen and (min-width: 1600px) and (max-width: 1678px) {
+  .animation-container {
+    width: 41rem; 
+    left: 20rem; 
+    bottom: 23.1rem;
+
+    .animation-line {
+      position: relative;
+      left: 2rem;
+    }
+    .animation-line2 {
+      left: 11rem;
+    }
+  }
+}
+@media only screen and (min-width: 1440px) and (max-width: 1596px) {
+  .animation-container {
+    width: 40rem; 
+    left: 17rem; 
+    bottom: 21.3rem;
+
+    .animation-line {
+      position: relative;
+      left: 2rem;
+    }
+    .animation-line2 {
+      left: 9rem;
+    }
+  }
+}
+
+// Media query para laptop de 13 y 15 pulgada
+@media only screen and (min-width: 1280px) and (max-width: 1300px) {
+  .animation-container {
+    width: 34rem; 
+    left: 16rem;
+    bottom: 19.5rem;
+
+    .animation-line {
+      position: relative;
+      left: 1.5rem;
+    }
+    .animation-line2 {
+      position: relative;
+      left: 7.8rem;
+    }
+  }
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 5%; 
+      width: 20%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 5%; 
+      width: 10%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 8%;
+      height: 100%;
+    }
+  }
+}
+//Media query para alinear las linea animada en esta resolucion
+@media only screen and (min-width: 1024px) and (max-width: 1260px){
+  .animation-container {
+    width: 32rem; 
+    position: relative;
+    left: 13rem; 
+    bottom: 18.2rem;
+
+    .animation-line {
+      position: relative;
+      left: 1.5rem;
+    }
+    .animation-line2 {
+      position: relative;
+      left: 6.6rem;
+    }
+  } 
+  .img-adaptation {
+    display: inline;
+  }
+
+}
+@media (min-width: 901px) and (max-width: 1000px) {
+  .img-adaptation {
+    display: none;
+  }
+  .animation-container {
+    display: none;
+  }
+}
+@media (min-width: 800px) and (max-width: 900px) {
+  .img-adaptation {
+    display: none;
+  }
+  .animation-container {
+    display: none;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 799px) {
+  .animation-line {
+    display: none;
+  }
+  .animation-line2 {
+    display: none;
+  }
+  .mode-responsive {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4rem;
+  }
+  .img-adaptation {
+    display: none;
+  }
+}

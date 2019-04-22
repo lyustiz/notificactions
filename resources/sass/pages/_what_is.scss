@@ -1,0 +1,275 @@
+
+// contenedor de la imagen del telefono
+// posicion absolute y centado en la capa contenedora
+.phone-holder {
+  @include absolute-centering; 
+  height: $phone-height;
+  width: $phone-width;
+  z-index: 10;
+  
+  img {
+    width: 100%
+  }
+}
+
+// contenedor del anillo animado
+// posicion absolute y centado en la capa contenedora
+.animated-ring-holder {
+  @include absolute-centering; 
+}
+
+// anillo animado
+// animacion: giro 360 grados cada 25s indefinidamente
+// hover: pausa la animacion
+.animated-ring {
+  width: $ring-diameter;
+  height: $ring-diameter;
+  border: solid 0.05rem $base-color-magenta;
+  animation: ring-rotation 25s infinite linear;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+// esferas del anillo animado
+// color azul inicial
+// hover: aumenta de tama;o y muestra doble sombra 
+.sphere {
+  position: absolute;
+  top: $ring-center;
+  left: $ring-center;
+  width: $sphere-size;
+  height: $sphere-size;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($base-color-blue, 0.9);
+  
+
+  &:hover {
+    width:  $sphere-resize;              
+    height: $sphere-resize;
+    font-size: 1.8rem;
+    transition: all 0.25s ease;
+    @include linear-gradient($base-color-blue, $base-color-magenta, right);
+    @include sphere-shadows($base-color-magenta, 1.8rem, $base-color-magenta, 0.9rem );
+    cursor: pointer;
+  }
+}
+
+// iconos de las esferas
+.sphere-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  color: rbga($base-color-white, 1);
+  
+  i {
+    font-size: 1.4rem;
+  }
+}
+
+// esferas
+// posicionado de las esferas del anillo animado cada 60 grados
+.sphere1 {
+  @include sphere-ring-position (0, $ring-radius);
+}
+
+.sphere2 {
+  @include sphere-ring-position (60deg, $ring-radius);
+}
+
+.sphere3 {
+  @include sphere-ring-position (120deg, $ring-radius);
+}
+
+.sphere4 {
+  @include sphere-ring-position (180deg, $ring-radius);
+}
+
+.sphere5 {
+  @include sphere-ring-position (240deg, $ring-radius);
+}
+
+.sphere6 {
+  @include sphere-ring-position (300deg, $ring-radius);
+}
+
+// descripcion de los items de la seccion "que es"
+.what-is-article { 
+  background-color: rgba($base-color-white, 0.1); 
+  color: $primary-text-color;
+}
+
+.what-is-article-title, .what-is-article-text { 
+  transition: all 1s;
+} 
+
+// KEYFRAMES
+
+// rotacion 360 grados del anillo 
+@keyframes ring-rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// MEDIA QUERYS
+
+@include media-breakpoint-down(sm) {
+
+  .what-is-background-holder {
+    
+    img {
+      height: 50rem;
+    }
+  }
+  
+  .what-is-info {
+   display: none !important;
+  }
+
+}
+
+@include media-breakpoint-down(md) {
+  
+  $ring-diameter: 17rem;
+  $ring-radius:   $ring-diameter / 2;
+  $sphere-size:   $ring-diameter * 0.1;
+  $sphere-resize: $sphere-size * 1.4;
+  $ring-center:   $ring-radius - ( $sphere-size / 2 );
+  $phone-height:  $ring-diameter * 1.1;
+  $phone-width:   $phone-height / 2;
+  
+  .phone-holder {
+    height: $phone-height;
+    width: $phone-width;
+  }
+
+  .animated-ring {
+    height: $ring-diameter;
+    width: $ring-diameter;
+  }
+
+  .sphere {
+    top: $ring-center;
+    left: $ring-center;
+    width: $sphere-size;
+    height: $sphere-size;
+    &:hover {
+      width:  $sphere-resize;              
+      height: $sphere-resize;
+    }
+  }
+
+  .sphere-icon {    
+    i {
+      font-size: 1.1rem;
+    }
+  }
+
+  .sphere1 {
+    @include sphere-ring-position (0, $ring-radius);
+  }
+  
+  .sphere2 {
+    @include sphere-ring-position (60deg, $ring-radius);
+  }
+  
+  .sphere3 {
+    @include sphere-ring-position (120deg, $ring-radius);
+  }
+  
+  .sphere4 {
+    @include sphere-ring-position (180deg, $ring-radius);
+  }
+  
+  .sphere5 {
+    @include sphere-ring-position (240deg, $ring-radius);
+  }
+  
+  .sphere6 {
+    @include sphere-ring-position (300deg, $ring-radius);
+  }
+
+
+  .what-is-article-title {
+    font-size: 1.3rem;
+  }
+
+  .what-is-article-text {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+@media (min-width: 2500px) { 
+
+
+  $ring-diameter: 25rem;
+  $ring-radius:   $ring-diameter / 2;
+  $sphere-size:   $ring-diameter * 0.1;
+  $sphere-resize: $sphere-size * 1.4;
+  $ring-center:   $ring-radius - ( $sphere-size / 2 );
+  $phone-height:  $ring-diameter * 1.1;
+  $phone-width:   $phone-height / 2;
+  
+  .phone-holder {
+    height: $phone-height;
+    width: $phone-width;
+  }
+
+  .animated-ring {
+    height: $ring-diameter;
+    width: $ring-diameter;
+  }
+
+  .sphere {
+    top: $ring-center;
+    left: $ring-center;
+    width: $sphere-size;
+    height: $sphere-size;
+    &:hover {
+      width:  $sphere-resize;              
+      height: $sphere-resize;
+    }
+  }
+
+  .sphere-icon {    
+    i {
+      font-size: 1.6rem;
+    }
+   }
+
+  .sphere1 {
+    @include sphere-ring-position (0, $ring-radius);
+  }
+  
+  .sphere2 {
+    @include sphere-ring-position (60deg, $ring-radius);
+  }
+  
+  .sphere3 {
+    @include sphere-ring-position (120deg, $ring-radius);
+  }
+  
+  .sphere4 {
+    @include sphere-ring-position (180deg, $ring-radius);
+  }
+  
+  .sphere5 {
+    @include sphere-ring-position (240deg, $ring-radius);
+  }
+  
+  .sphere6 {
+    @include sphere-ring-position (300deg, $ring-radius);
+  }
+
+
+
+}

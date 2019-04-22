@@ -1,0 +1,21 @@
+footer {
+    background-color: $base-color-blue;
+    color: $base-color-white;
+    width: 100%;
+    height: 6vh;
+    min-height: 6vh;
+    z-index: 3000;
+}
+
+.footer-container {
+    font-size: 0.7rem;
+}
+
+@include media-breakpoint-down(sm) {
+  
+    footer {
+        height: 12vh;
+        width: 100vw;
+        min-height: 8vh;
+    }
+  }

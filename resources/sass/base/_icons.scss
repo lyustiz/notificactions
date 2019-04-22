@@ -1,0 +1,135 @@
+
+@font-face {
+    font-family: 'iconstlp_home';
+    src:  url('~/fonts/icons/iconstlp_home.eot?cy6iz4');
+    src:  url('~/fonts/icons/iconstlp_home.eot?cy6iz4#iefix') format('embedded-opentype'),
+      url('~/fonts/icons/iconstlp_home.ttf?cy6iz4') format('truetype'),
+      url('~/fonts/icons/iconstlp_home.woff?cy6iz4') format('woff'),
+      url('~/fonts/icons/iconstlp_home.svg?cy6iz4#iconstlp_home') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+$tlp-font-icons: iconstlp_home;
+
+
+.tlp-icon-xs {
+  font-size: 0.2rem !important;
+}
+
+.tlp-icon-sm {
+  font-size: 0.5rem !important;
+}
+
+.tlp-icon-md {
+  font-size: 1rem !important;
+}
+
+.tlp-icon-lg {
+  font-size: 1.5rem !important;
+}
+
+.tlp-icon-2x {
+  font-size: 2rem !important;
+}
+
+
+.tlp-icon-3x {
+  font-size: 3rem !important;
+}
+
+.tlp-icon-4x {
+  font-size: 4rem !important;
+}
+
+
+[class^="tlp-icon-"], [class*=" tlp-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'iconstlp_home' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .tlp-icon-forward:before {
+    content: "\e918";
+  }
+  .tlp-icon-back:before {
+    content: "\e900";
+  }
+  .tlp-icon-up:before {
+    content: "\e901";
+  }
+  .tlp-icon-industry:before {
+    content: "\e902";
+  }
+  .tlp-icon-building:before {
+    content: "\e903";
+  }
+  .tlp-icon-location:before {
+    content: "\e904";
+  }
+  .tlp-icon-people:before {
+    content: "\e905";
+  }
+  .tlp-icon-bars:before {
+    content: "\e906";
+  }
+  .tlp-icon-cash:before {
+    content: "\e907";
+  }
+  .tlp-icon-menu:before {
+    content: "\e908";
+  }
+  .tlp-icon-close:before {
+    content: "\e909";
+  }
+  .tlp-icon-store:before {
+    content: "\e90a";
+  }
+  .tlp-icon-user:before {
+    content: "\e90b";
+  }
+  .tlp-icon-card:before {
+    content: "\e90c";
+  }
+  .tlp-icon-check:before {
+    content: "\e90d";
+  }
+  .tlp-icon-coin:before {
+    content: "\e90e";
+  }
+  .tlp-icon-facebook:before {
+    content: "\e90f";
+  }
+  .tlp-icon-ingenio:before {
+    content: "\e910";
+  }
+  .tlp-icon-instagram:before {
+    content: "\e911";
+  }
+  .tlp-icon-money:before {
+    content: "\e912";
+  }
+  .tlp-icon-qr:before {
+    content: "\e913";
+  }
+  .tlp-icon-smartphone:before {
+    content: "\e914";
+  }
+  .tlp-icon-twitter:before {
+    content: "\e915";
+  }
+  .tlp-icon-wifi:before {
+    content: "\e916";
+  }
+  .tlp-icon-pc:before {
+    content: "\e917";
+  }

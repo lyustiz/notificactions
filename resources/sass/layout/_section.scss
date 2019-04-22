@@ -1,0 +1,101 @@
+.page-section {
+  height: 100vh;
+  min-height: 40rem;
+}
+
+.title-row{
+  height: 20%;
+}
+
+.sections-holder {
+  background: $base-color-white url("~/img/landing/landing_background.png") top/cover no-repeat 
+}
+
+.section-title {
+  color: $base-color-blue;
+  display: flex;
+  align-items: flex-end;
+
+  h3 {
+    font-size: 3rem;
+  }  
+}
+
+.section-page-title {
+  color: $base-color-white;
+  display: flex;
+  align-items: flex-end;
+
+  h1 {
+    font-size: 3rem;
+  }  
+}
+
+
+.content-row{
+  height: 80%;
+}
+
+
+@include media-breakpoint-down(sm) {
+  
+  html {
+    font-size: 0.85rem;
+  }
+
+  .section-title {
+    
+    h3 {
+      font-size: 1.7rem;
+    }  
+  }
+}
+
+@include media-breakpoint-down(md) {
+  
+  html {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    
+    h3 {
+      font-size: 2.5rem;
+    }  
+  }
+
+}
+
+@include media-breakpoint-down(lg) {
+
+  .section-title {
+    h3 {
+      font-size: 2.8rem;
+    }  
+  }
+  
+  html {
+    font-size: 0.95rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  
+  html {
+    font-size: 1rem;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  
+  html {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 3000px) { 
+  
+  html {
+    font-size: 3rem;
+  }
+}

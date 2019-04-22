@@ -1,0 +1,59 @@
+// contenedor de los botones de descarga de la aplicaciones
+// android y ios 
+.apps-download {
+  height: 50%;
+}
+
+.apps-download-container{
+  height: 16%;
+}
+
+.apps-download-text {
+  color: $base-color-blue;
+  font-size: 1.5rem;
+}
+
+.home-container {
+  background: $base-color-white url("../img/landing/home-smartphone-mobile.png") center/cover no-repeat;
+}
+
+//social networks bar
+.social-networks {
+  top: 40%;
+  z-index: 100;
+  width: 2.2rem;
+  height: 6.5rem;
+  background-color: rgba(198, 198, 198, 0.6);
+}
+
+.social-networks-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  
+  a {
+    color: rgba( darken($base-color-dark-grey, 5%), 1);
+    font-size: 1.07rem;
+  }
+}
+
+.title-principal {
+  color: $base-color-white;
+  
+  h1 {
+    font-size: 2rem;
+    width: 80%;
+  }
+}
+
+@media (max-width: 400px) { 
+  
+  .title-principal {
+    color: $base-color-white;
+    
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+- imagen de los botones de descarga aplicaciones - (listo)
+- imagen de fondo de las secciones (listo) 
+- pendiente cambio de iconos RRSS - esferas animacion.
+- menu del home (listo).
+- botones login del home (listo)
+- cambio de tama;o de la animacion (listo) 
+- optimizar imagenes 
+
+- menu fondo completo (listo) 
+- fondo consumer (listo)
+
+
+- cambio iconos de cierre mostrar menu (listo)
+
+
+
+
+

@@ -1,0 +1,359 @@
+
+// Posiciona la segunda linea animada
+.animation-line2 {
+  position: relative;
+  left: 20%;
+}
+// Animacion de la primera linea 
+.draw-line-1,.draw-line-2,.draw-line-3 {
+  fill:none;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+  stroke-width:8px;
+}
+
+.draw-line-1 {
+  stroke:url(#gradients-master);
+}
+.draw-line-2{
+  stroke:url(#gradients-children1);
+}
+.draw-line-3{
+  stroke:url(#gradients-children2);
+   
+}
+
+.draw-line-1,.draw-line-2 ,.draw-line-3 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate forwards 3s;
+}
+
+.draw-line-3 {
+  animation-delay: 4.8s;
+}
+
+/* Animacion de la segunda linea para separar los tiempo y no se ejecute
+las dos ala vez cambiando su clases*/
+.draw-line-2-1,.draw-line-2-2,.draw-line-2-3 {
+  fill:none;
+  stroke-linecap:round;
+  stroke-miterlimit:10;
+  stroke-width:8px;
+}
+
+.draw-line-2-1 {
+  stroke:url(#gradients-master);
+}
+.draw-line-2-2{
+  stroke:url(#gradients-children1);
+}
+.draw-line-2-3{
+  stroke:url(#gradients-children2);
+   
+}
+
+.draw-line-2-1,.draw-line-2-2 ,.draw-line-2-3 {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear alternate forwards 6.5s;
+}
+
+.draw-line-2-3 {
+  animation-delay: 8.3s;
+}
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.fake-line {
+  fill:none;
+  stroke-miterlimit:10;
+  stroke: url(#Degradado_fake_line);
+  stroke-dasharray: 10 20; 
+  stroke-width:10px;
+}
+.fake-line2 {
+  fill:none;
+  stroke-miterlimit:10;
+  stroke: url(#Degradado_fake_line2);
+  stroke-dasharray: 10 20; 
+  stroke-width:10px;
+}
+
+svg{
+    width: 100%;
+}
+
+.functions-info {
+  height: 30%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.method-pay {
+  position: relative;
+  float: right;
+  right: 5%;
+
+  .method-pay-img1 {
+    margin-right: 5%; 
+    width: 20%;
+    height: 100%;
+
+  }
+  .method-pay-img2 {
+    margin-right: 5%; 
+    width: 10%;
+    height: 100%;
+  }
+  .method-pay-img3 { 
+    width: 8%;
+    height: 100%;
+  }
+
+}
+.method-pay-text {
+  margin-right: 3%; 
+}
+
+.mode-responsive-mobile {
+  display: none;
+}
+//Ubicacion de la dos linea animadas que se observa en la imagen 
+.position-lines {
+  width: 48%;
+  position: relative;
+  left: 24%;
+  bottom: 38%;
+}
+
+.sphere-functions-holder {
+  text-align: center;
+  height: 5rem;
+}
+.sphere-margin-1 {
+  margin-left: 15%;
+}
+.sphere-functions {
+  width: 1rem;
+  height: 1rem;
+  border: 0;
+  border-radius: 100%;
+  font-family: calibri;
+  font-size: 12px;
+  color: $base-color-blue;
+  @include linear-gradient($base-color-blue, $base-color-magenta, right);
+  @include sphere-shadows($base-color-magenta, 0.5rem, $base-color-magenta, 0.2rem );
+}
+
+@include media-breakpoint-down(xl) {
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 5%; 
+      width: 15%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 5%; 
+      width: 8%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 6%;
+      height: 100%;
+    }
+  }
+  .method-pay-text {
+    margin-right: 2%;
+    font-size: 16px;  
+  }
+}
+
+@include media-breakpoint-down(lg) {  
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 5%; 
+      width: 15%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 5%; 
+      width: 8%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 6%;
+      height: 100%;
+    }
+  }
+  .method-pay-text {
+    margin-right: 2%;
+    font-size: 12px;  
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .mode-web {
+    display: none;
+  }
+  .method-pay {
+    display: none;
+  }
+  .mode-responsive-mobile {
+    display: inline;
+    .jump-line {
+      margin-bottom: 5%;
+    }
+  }
+}
+//Media query para alinear las linea animada en esta resolucion
+@media only screen and (max-width: 1024px) {
+  .animation-line {
+    position: relative;
+    left: 0;
+    bottom: 5%;
+  }  
+  .animation-line2 {
+    position: relative;
+    left: 20%;
+  }
+  .position-lines {
+    width: 48%;
+    position: relative;
+    left: 24%;
+    bottom: 31%;
+  }
+}
+// Media query para laptop de 13 y 15 pulgada
+@media only screen and (min-width: 1280px) and (max-width: 1366px) {
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 5%; 
+      width: 20%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 5%; 
+      width: 10%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 8%;
+      height: 100%;
+    }
+  }
+}
+// Media query para monitor desktop de 19 pulgada
+@media only screen and (max-width: 1440px) { 
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 5%; 
+      width: 19%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 5%; 
+      width: 10%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 8%;
+      height: 100%;
+    }
+  }
+}
+
+//Media query para desktop de 23
+@media only screen and (min-width: 1920px) {
+  .animation-line {
+    position: relative;
+    left: 0;
+    bottom: 5%;
+  }  
+  .animation-line2 {
+    position: relative;
+    left: 20%;
+  }
+  .method-pay {
+    position: relative;
+    float: right;
+    right: 5%;
+
+    .method-pay-img1 {
+      margin-right: 4%; 
+      width: 12%;
+      height: 100%;
+    }
+    .method-pay-img2 {
+      margin-right: 4%; 
+      width: 7%;
+      height: 100%;
+    }
+    .method-pay-img3 { 
+      width: 5%;
+      height: 100%;
+    }
+  }
+  .position-lines {
+    width: 48%;
+    position: relative;
+    left: 24%;
+    bottom: 35%;
+  }
+  .sphere-margin-1 {
+    margin-left: 18%;
+  }
+}
+
+@media only screen and (min-width: 2160px) and (max-width: 3840px) {
+  .animation-line {
+    position: relative;
+    left: 0;
+    bottom: 5%;
+  }  
+  .animation-line2 {
+    position: relative;
+    left: 20%;
+  }
+  .position-lines {
+    width: 100rem;
+    position: relative;
+    bottom: 35%;
+  }
+  .sphere-functions {
+    width: 4rem;
+    height: 4rem;
+    border: 0;
+    border-radius: 100%;
+    font-family: calibri;
+    font-size: 12px;
+    color: $base-color-blue;
+    @include linear-gradient($base-color-blue, $base-color-magenta, right);
+    @include sphere-shadows($base-color-magenta, 0.5rem, $base-color-magenta, 0.2rem );
+  }
+  .sphere-margin-1 {
+    margin-left: 18%;
+  }
+}
