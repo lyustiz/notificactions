@@ -1,5 +1,4 @@
 /** Plugins **/
-import './plugins/axios'
 import './config'
 
 
@@ -7,16 +6,16 @@ let auth        = 'J0F1HLWUZjJgkLvzTsduCq6cgv0b5I50Ws0d6q6X29YuyPvmKL8UiDwC0jm4M
 let base_url    = 'https://cp.pushwoosh.com/json/1.3/';
 let endPointUrl = 'createMessage';
 
-
-
 $(document).ready(function() {
 
     $.fn.eventos();
     $('#formPush').trigger("reset");
-    
+
 });
 
-/************ VALIDACION  *****************/
+
+
+
 
 
 
@@ -35,44 +34,44 @@ $.fn.eventos = function(){
 		}
 		
     });
-    
-    $('#slt-apps').unbind('change');
-	$('#slt-apps').on("change", function(e) {
-        
-	   
-		
-    });
+
     
 
     $('#btn-send').unbind('click');
     $('#btn-send').on("click", function(e) {
         
 
-
-
-
+        let application = $.fn.getApplication();
+        let platforms   = $.fn.getPlataforms();
+        let send_date   = $.fn.getSendDate();
+        let message     = $.fn.getMessage();
+        let filters     = $.fn.getFilters();
+        let UUID        = $.fn.getUUID();
+   
         let data =     {
-                        "request": {
-                          "application": $('#slt-apps').val(), 
-                          "auth": auth, 
-                          "notifications": [
-                            {
-                              "send_date": "now",  // required. YYYY-MM-DD HH:mm OR 'now'
-                              "ignore_user_timezone": false, 
-                              "timezone": "America/Caracas", 
-                              "content": { 
-                                "en": $('#txa_msj_push').val(),
-                                "es": $('#txa_msj_push').val(),
-                              },
-                              "transactionId": "6e22a9af-84e4-46e6-af16-e457a4a6e7e6",  
-                              "platforms": [Number($('.rad_plataform:checked').val())], // optional.    
-                      
-                              //filters
-                              // "filter": "FILTER_NAME", // optional   
-                            }
-                          ]
+                    "request": {
+                      "application": application, 
+                      "auth": auth, 
+                      "notifications": [
+                        {
+                          "send_date": send_date,  // required. YYYY-MM-DD HH:mm OR 'now'
+                          "ignore_user_timezone": false, 
+                          "timezone": "America/Caracas", 
+                          "content": { 
+                            "en": message,
+                          },
+                          "transactionId": UUID,  
+                          "platforms": platforms, // optional.    
+                  
                         }
-                      }
+                      ]
+                    }
+                  }
+
+        if(filters.length > 0)
+        {
+            data.request.notifications['filter'] = filters;
+        }
 
         if($.fn.validate())
         {
@@ -84,42 +83,85 @@ $.fn.eventos = function(){
 		
     });
     
-    
-	
-
-
 }
 
+/********* FUNCTIONS ***********/
 
 
-/********* AJAX ***********/
-
-$.fn.validate = function()
+$.fn.resetForm = function()
 {
-   if( ! $('#slt-apps').val() )
-   {
-       alert('Seleccione Aplicacion')
-       return false
-   }
-
-   if( $('.rad_plataform:checked').length < 1 )
-   {
-       alert('Seleccione Plataforma')
-       return false
-   }
-
-   if( ! $('#txa_msj_push').val() )
-   {
-       alert('Indique Mensaje')
-       return false
-   }
-
-   return true
+    $('#formPush').trigger("reset");
+  
 }
 
-$.fn.sendRequest = function(data, endPointUrl){
+$.fn.getApplication = function()
+{
+    return $('#slt-apps').val();
+}
 
+$.fn.getPlataforms = function()
+{
+    let plataforms = [];
+
+    $('.chk_plataform:checked').each(function(index, item) {
+
+        let values = $(item).val();
     
+        if( values.includes(',') ) 
+        {
+            values = values.split(',');
+        }
+    
+        plataforms.push(...values);
+        
+    });
+
+    return plataforms; 
+}
+
+$.fn.getSendDate = function()
+{
+    if( $('#schedule-date').val() && $('#schedule-time').val())
+    {
+        return $('#schedule-date').val() + ' ' + $('#schedule-time').val();
+    }
+
+    return 'now';
+}
+
+$.fn.getMessage = function()
+{
+    return $('#txa_msj_push').val();
+    
+}
+
+$.fn.getFilters = function()
+{
+    let filters = [];
+
+    $('.chk-filters:checked').each(function(index, item) {
+
+        filters = $(item).val();
+        
+    });
+    
+    return filters; 
+}
+
+$.fn.getUUID = function(data, endPointUrl){
+
+    var dt = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = (dt + Math.random()*16)%16 | 0;
+        dt = Math.floor(dt/16);
+        return (c=='x' ? r :(r&0x3|0x8)).toString(16);
+    });
+    return uuid;
+  }
+  
+  $.fn.sendRequest = function(data, endPointUrl){
+
+    $('loading').show();
 
     fetch(base_url + endPointUrl, {
         method: 'POST', // or 'PUT'
@@ -129,40 +171,117 @@ $.fn.sendRequest = function(data, endPointUrl){
           'Content-Type': 'application/x-www-form-urlencoded'
         }
       }).then(res => res.json())
-        .then(response => console.log('Success:', response))
-      .catch(error => console.error('Error:', error))
-      
+        .then(response => {
 
-      /*
-    fetch('http://example.com/movies.json')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(myJson);
-    });
 
-    /*$.ajax({
-        url: base_url + endPointUrl,
-        method: "POST",
-        data: data })
-      .done(function(data) {
-        console.log('success', data) 
+          if(response.status_code == 200)
+          {
+            $.fn.showMessage('Envio del Mensaje '+response.status_message, 'success')
+            $('#formPush').trigger("reset");
+          }
+          else {
+            $.fn.showMessage('No se envio el Mensaje: '+response.status_message, 'error')
+          }
+          $('loading').hide();
+        })
+      .catch(error => {
+        $.fn.showMessage(error, 'error')
+        console.log(error)
+        $('loading').hide();
       })
-      .fail(function(xhr) {
-        console.log('error', xhr);
-      });
-    
-    /*
-    axios.post(base_url+endPointUrl, data)
-    .then(respuesta => {
-        console.log( respuesta.data );
-    })
-    .catch(error => {
-        console.log( respuesta.data );   
-    })*/
+        
+      
+}
+/*
+{
+    "request":{
+      "auth": "yxoPUlwqm…………pIyEX4H", // API access token from Pushwoosh Control Panel
+      "source": null, // optional. Possible values are null, "CP", "API","GeoZone", "Beacon", "RSS", "AutoPush","Twitter", "A/B Test"
+      "searchBy": "applicationCode",  // optional. Possible values are "", "notificationID", "notificationCode", "applicationCode", "campaignCode"
+      "value": "C8717-703F2", // optional
+      "lastNotificationID": 0 // optional
+    }
+  }
+*/
+$.fn.showMessage = function(message, type){
+
+  let className = 'bg-success';
+
+  switch (type) {
+    case 'success':
+      className = 'bg-success';
+      break;
+
+    case 'error':
+      className = 'bg-danger';
+      break;
+  }
+
+  $('.toast-body').removeClass( "bg-success bg-danger" )
+  $('.toast-body').text(message).addClass(className);
+  
+  $('#mensaje').toast('show')
+
+  $('#myToast').on('hidden.bs.toast', function () 
+  {
+    $('.toast-body').text(' ').removeClass(className);
+  })
 
 }
+
+
+/************ VALIDACION  *****************/
+
+$.fn.validate = function()
+{
+   if( ! $('#slt-apps').val() )
+   {
+       $.fn.showMessage('Seleccione Aplicacion', 'error')
+       return false
+   }
+
+   if( $('.chk_plataform:checked').length < 1 )
+   {
+       $.fn.showMessage('Seleccione Plataforma', 'error')
+       return false
+   }
+
+   if( ! $('#txa_msj_push').val() )
+   {
+       $.fn.showMessage('Indique Mensaje', 'error')
+       return false
+   }
+
+   if( $('#txa_msj_push').val().length > 160 )
+   {
+       $.fn.showMessage('Mensaje tiene mas de 160 caracteres', 'error')
+       return false
+   }
+
+   if( $('#schedule-date').val() || $('#schedule-time').val() )
+   {
+       
+        if(! $('#schedule-date').val())
+        {
+            $.fn.showMessage('Indique Fecha', 'error')
+            return false
+        }
+
+        if(! $('#schedule-time').val())
+        {
+            $.fn.showMessage('Indique Hora', 'error')
+            return false
+        }
+    
+    
+   }
+
+   return true
+}
+
+
+
+
 
 
 

@@ -6,6 +6,7 @@ use Ixudra\Curl\Facades\Curl;
 use Ramsey\Uuid\Uuid;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Gomoob\Pushwoosh\Client\Pushwoosh;
 
 class NotificationsController extends Controller {
 
